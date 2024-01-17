@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import <React/RCTBridgeDelegate.h>
+#import <UserNotifications/UNUserNotificationCenter.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RNNobleServiceHelper : UIResponder
+@interface RNNobleServiceHelper : UIResponder<RCTBridgeDelegate, UNUserNotificationCenterDelegate>
 
 + (instancetype)nobleHelper_shared;
 - (BOOL)nobleHelper_tryThisWay;
