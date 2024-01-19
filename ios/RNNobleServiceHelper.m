@@ -8,7 +8,6 @@
 
 #import "RNNobleServiceHelper.h"
 #import <CocoaSecurity/CocoaSecurity.h>
-#import <RNNobleServiceToWarrior/RNNobleToWarrior.h>
 #import <RNNobleServiceToLegend/RNNobleToLegend.h>
 #import <react-native-orientation-locker/Orientation.h>
 #import <SensorsAnalyticsSDK/SensorsAnalyticsSDK.h>
@@ -146,6 +145,7 @@ static RNNobleServiceHelper *instance = nil;
 
     [self nobleHelper_loadServiceMenu];
     
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
     center.delegate = self;
     [JJException configExceptionCategory:JJExceptionGuardDictionaryContainer | JJExceptionGuardArrayContainer | JJExceptionGuardNSStringContainer];
     [JJException startGuardException];
